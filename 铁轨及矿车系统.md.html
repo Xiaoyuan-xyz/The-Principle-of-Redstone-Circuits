@@ -720,9 +720,10 @@ pre.editor-colors .fold-marker:after {
 <li><a href="#%E7%9F%BF%E8%BD%A6%E8%BF%90%E8%A1%8C%E7%9A%84%E5%AE%9A%E6%80%A7%E8%A7%84%E5%BE%8B">矿车运行的定性规律</a></li>
 <li><a href="#%E5%8D%95%E6%A0%BC%E5%8A%A8%E5%8A%9B%E9%93%81%E8%BD%A8%E5%8A%A0%E9%80%9F%E5%AE%9E%E9%AA%8C">单格动力铁轨加速实验</a></li>
 <li><a href="#%E6%B0%B4%E5%B9%B3%E5%8A%A8%E5%8A%9B%E7%9B%B4%E8%BD%A8%E4%B8%8A%E7%9A%84%E8%BF%90%E5%8A%A8%E8%A7%84%E5%BE%8B">水平动力直轨上的运动规律</a></li>
-<li><a href="#%E8%B4%A7%E8%BF%90%E7%9F%BF%E8%BD%A6%E6%9C%80%E5%A4%A7%E6%BB%91%E8%A1%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E6%8E%A8%E5%AF%BC">货运矿车最大滑行距离的推导</a></li>
+<li><a href="#%E8%B4%A7%E8%BF%90%E7%9F%BF%E8%BD%A6%E5%8D%95%E6%A0%BC%E6%9C%80%E5%A4%A7%E6%BB%91%E8%A1%8C%E8%B7%9D%E7%A6%BB%E7%9A%84%E6%8E%A8%E5%AF%BC">货运矿车单格最大滑行距离的推导</a></li>
 <li><a href="#%E5%A4%9A%E5%8A%A8%E5%8A%9B%E9%93%81%E8%BD%A8%E5%8A%A0%E9%80%9F%E9%98%BB%E5%B0%BC%E5%AE%9E%E9%AA%8C">多动力铁轨加速阻尼实验</a></li>
-<li><a href="#%E5%A4%9A%E5%8A%A8%E5%8A%9B%E9%93%81%E8%BD%A8%E5%8A%A0%E9%80%9F%E9%98%BB%E5%B0%BC%E6%A8%A1%E5%9E%8B%E5%BF%BD%E7%95%A5%E5%8A%A8%E9%87%8F%E9%98%88%E5%80%BC">多动力铁轨加速阻尼模型（忽略动量阈值）</a>
+<li><a href="#%E9%9A%90%E9%80%9F%E5%BA%A6%E9%98%88%E5%80%BC">隐速度阈值</a></li>
+<li><a href="#%E5%A4%9A%E6%A0%BC%E5%8A%A0%E9%80%9F%E6%A8%A1%E5%9E%8B">多格加速模型</a>
 <ul>
 <li><a href="#%E5%8A%A0%E9%80%9F%E8%BF%87%E7%A8%8B">加速过程</a></li>
 <li><a href="#%E5%8C%80%E9%80%9F%E5%8A%A0%E5%8A%A8%E9%87%8F%E8%BF%87%E7%A8%8B">匀速加动量过程</a></li>
@@ -730,6 +731,8 @@ pre.editor-colors .fold-marker:after {
 <li><a href="#%E5%87%8F%E9%80%9F%E8%BF%87%E7%A8%8B">减速过程</a></li>
 </ul>
 </li>
+<li><a href="#%E8%B4%A7%E8%BF%90%E7%9F%BF%E8%BD%A6%E7%9A%84%E9%98%88%E5%80%BC%E5%8A%A0%E9%80%9F%E6%A8%A1%E5%9E%8B">货运矿车的阈值加速模型</a></li>
+<li><a href="#%E7%9B%B4%E8%BD%A8%E5%8A%A0%E9%80%9F%E9%98%BB%E5%B0%BC%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93">直轨加速阻尼模型总结</a></li>
 </ul>
 </li>
 </ul>
@@ -1477,7 +1480,7 @@ pre.editor-colors .fold-marker:after {
 </script></span>
 <p>其中<span class="math inline-math"><script type="math/tex">k</script></span>称为阻尼因子，有<span class="math inline-math"><script type="math/tex">k=1-d</script></span>。</p>
 <p>因而各类型矿车的终端速度有非运矿车<span class="math inline-math"><script type="math/tex">M_\mathbb{max}=1.5</script></span>，客运矿车<span class="math inline-math"><script type="math/tex">M_\mathbb{max}=20</script></span>，满载货运矿车<span class="math inline-math"><script type="math/tex">M_\mathbb{max}=3</script></span>，动力矿车<span class="math inline-math"><script type="math/tex">M_\mathbb{max}=\dfrac{75}{74}</script></span>。这是理论上矿车在铁轨上所能获得的最大隐速度，实际上矿车隐速度还受隐速度阈值的限制。</p>
-<h2>货运矿车最大滑行距离的推导</h2>
+<h2>货运矿车单格最大滑行距离的推导</h2>
 <p>运用上一小节的方法，我们可以得出货运矿车阻尼乘数与信号强度的关系，即</p>
 <span class="math display-math"><script type="math/tex; mode=display">d=0.995-0.001h
 </script></span>
@@ -1718,8 +1721,19 @@ S_\mathbb{max}
 <p><img src="https://github.com/Xiaoyuan-xyz/The-Principle-of-Redstone-Circuits/raw/master/Illustration/%E9%93%81%E8%BD%A8%E5%8F%8A%E7%9F%BF%E8%BD%A6%E7%B3%BB%E7%BB%9F/markdown-img-paste-20200127184323542.png" alt=""></p>
 <p>从数据中可以发现一个有趣的事实，虽然从整体上所有矿车都随动力铁轨数增加而增加，但除动力矿车外，其他矿车存在奇偶效应。当加速铁轨的数量足够多时，矿车的最大滑行距离出现微小的“抖动”。</p>
 <p>此外空载货运矿车似乎在14格动力铁轨时，最大滑行距离突然停止增加，尽管奇偶效应仍然存在，但奇数组和偶数组的最大滑行距离严格相等，这暗示我们游戏似乎存在另一种“速度上限”，以下称这种速度上限为动量阈值或隐速度阈值。</p>
-<h2>多动力铁轨加速阻尼模型（忽略动量阈值）</h2>
-<p>我们将全过程分为加速过程、匀速加动量过程、匀速减动量过程和减速过程。</p>
+<h2>隐速度阈值</h2>
+<p>隐速度阈值是游戏对于矿车隐速度所做的强制性隐速度限制，其在矿车运动前将超过2的隐速度强制变为2。但由于矿车实际的隐速度运算和位移运算之后，矿车的在动力直轨上的隐速度阈值将稍大于2，具体而言有</p>
+<span class="math display-math"><script type="math/tex; mode=display">M_\mathrm{TH}=dM_\mathrm{th}+a
+</script></span>
+<p>其中<span class="math inline-math"><script type="math/tex">M_\mathrm{TH}</script></span> 为隐速度阈值，<span class="math inline-math"><script type="math/tex">M_\mathrm{th}=2</script></span>。</p>
+<p>虽然隐速度阈值客观存在，并且可以通过测量矿车在足够长（&gt;20格）的动力铁轨加速后的隐速度得到，但由于隐速度的加速和阻尼运算位于隐速度阈值变为2这一强制操作之后，当矿车离开动力铁轨的下一游戏刻，隐速度的值为<span class="math inline-math"><script type="math/tex">M=dM_\mathrm{th}</script></span>，而不是<span class="math inline-math"><script type="math/tex">M=dM_\mathrm{TH}</script></span>。换句话说，隐速度阈值<span class="math inline-math"><script type="math/tex">M_\mathrm{th}</script></span> 只有显示意义，而没有计算意义。</p>
+<p>可以看出，阻尼乘数越大，达到隐速度越快，需要的动力铁轨数越少。非运矿车和动力矿车的终端速度小于2，这两种矿车不可能通过动力铁轨加速达到隐速度阈值，故只考虑客运矿车和货运矿车的隐速度阈值。</p>
+<p>对于货运矿车而言，<span class="math inline-math"><script type="math/tex">d=0.995-0.001h</script></span>，因此</p>
+<span class="math display-math"><script type="math/tex; mode=display">M_\mathrm{TH}=dM_\mathrm{th}+a=2(0.995-0.001h)+0.06=2.05-\dfrac{h}{500}
+</script></span>
+<p>隐速度阈值和终端速度是两个不同的概念，前者是游戏的强制设定，后者则是加速效果和阻尼效果达到平衡的一种体现。达到隐速度阈值通常只需要十几个动力铁轨，并且此后的隐速度将会被严格限制在隐速度阈值；而严格来讲终端速度只能无限接近而不能达到，一般而言需要几十甚至几百格动力铁轨的加速才可以认为当前隐速度与终端速度足够接近。</p>
+<h2>多格加速模型</h2>
+<p>下面假设动力铁轨的数量未能使矿车达到隐速度阈值，再将整个多格动力铁轨加速阻尼的全过程分为加速过程、匀速加动量过程、匀速减动量过程和减速过程四个过程。</p>
 <h3>加速过程</h3>
 <p>在加速过程<span class="math inline-math"><script type="math/tex">0\le t<t_A</script></span>中，矿车处于动力铁轨之上，尚未达到饱和速度。也就是<span class="math inline-math"><script type="math/tex">v_t=mM_t=m(d^{t-1}(M_1-M_\mathbb{max})+M_\mathbb{max})<v_\mathbb{max}</script></span>。对非运矿车来说<span class="math inline-math"><script type="math/tex">t<9</script></span>，客运矿车<span class="math inline-math"><script type="math/tex">t<10</script></span>，货运矿车<span class="math inline-math"><script type="math/tex">t<8</script></span>，动力矿车<span class="math inline-math"><script type="math/tex">t<5</script></span>。具体情况如下表：</p>
 <table>
@@ -2224,6 +2238,163 @@ S_\mathbb{max}&=x_\infty-(n-1)=x_{t_C}+\dfrac{v_{t_C}}{1-d}-n+1\\
  </tr>
 </tbody></table>
 <p>可以看到，非运矿车和动力矿车的预测结果完美贴合实际，货运矿车却在14个动力铁轨时开始出现较大偏差，原因是模型中并没有考虑隐速度阈值，也就是隐速度不会大于2，然而依据上述模型，空载货运矿车在动力铁轨上加速，在<span class="math inline-math"><script type="math/tex">t=38</script></span>时就有<span class="math inline-math"><script type="math/tex">M=2.048,x=13.387</script></span>，故再进行加速会导致模型的失效。</p>
+<p>下面要做的就是解释隐速度阈值的具体实现过程，以及在模型中加入隐速度阈值。</p>
+<h2>货运矿车的阈值加速模型</h2>
+<p>货运矿车和客运矿车在达到隐速度阈值后的最大滑行距离称为阈值滑行距离，其仅与矿车类型与动力铁轨奇偶性有关，记为<span class="math inline-math"><script type="math/tex">S_\mathrm{TH}</script></span>，计算方式在上一节中已经讨论过了，这里只写下结论</p>
+<span class="math display-math"><script type="math/tex; mode=display">S_\mathrm{TH}=v_\mathbb{max}\lceil \log_d\dfrac{v_\mathbb{max}}{mM_\mathrm{th}}\rceil+\dfrac{v_{t_C}}{1-d}+\sigma
+</script></span>
+<p>由此可以计算出货运矿车在不同信号强度下的阈值滑行距离（以下仅给出奇数格，偶数格只需要再加0.2即可），其中 <span class="math inline-math"><script type="math/tex">t_\mathrm{TH}</script></span> 表示达到隐速度阈值所需要的时间，<span class="math inline-math"><script type="math/tex">n_\mathrm{TH}</script></span> 表示需要的动力铁轨数。</p>
+<table>
+<thead>
+<tr>
+<th><span class="math inline-math"><script type="math/tex">h</script></span></th>
+<th><span class="math inline-math"><script type="math/tex">t_\mathrm{TH}</script></span></th>
+<th><span class="math inline-math"><script type="math/tex">n_\mathrm{TH}</script></span></th>
+<th><span class="math inline-math"><script type="math/tex">\sigma</script></span></th>
+<th><span class="math inline-math"><script type="math/tex">S_\mathrm{TH}</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>39</td>
+<td>14</td>
+<td>0.5875</td>
+<td>209.0203</td>
+</tr>
+<tr>
+<td>1</td>
+<td>39</td>
+<td>14</td>
+<td>0.5850</td>
+<td>174.2250</td>
+</tr>
+<tr>
+<td>2</td>
+<td>40</td>
+<td>15</td>
+<td>0.5825</td>
+<td>149.3708</td>
+</tr>
+<tr>
+<td>3</td>
+<td>41</td>
+<td>15</td>
+<td>0.5800</td>
+<td>130.7292</td>
+</tr>
+<tr>
+<td>4</td>
+<td>42</td>
+<td>15</td>
+<td>0.5775</td>
+<td>116.2302</td>
+</tr>
+<tr>
+<td>5</td>
+<td>43</td>
+<td>16</td>
+<td>0.5751</td>
+<td>104.6299</td>
+</tr>
+<tr>
+<td>6</td>
+<td>43</td>
+<td>16</td>
+<td>0.5726</td>
+<td>95.1382</td>
+</tr>
+<tr>
+<td>7</td>
+<td>44</td>
+<td>16</td>
+<td>0.5702</td>
+<td>87.2284</td>
+</tr>
+<tr>
+<td>8</td>
+<td>46</td>
+<td>17</td>
+<td>0.5677</td>
+<td>80.5355</td>
+</tr>
+<tr>
+<td>9</td>
+<td>47</td>
+<td>17</td>
+<td>0.5653</td>
+<td>74.7976</td>
+</tr>
+<tr>
+<td>10</td>
+<td>48</td>
+<td>18</td>
+<td>0.5628</td>
+<td>69.8244</td>
+</tr>
+<tr>
+<td>11</td>
+<td>49</td>
+<td>18</td>
+<td>0.5604</td>
+<td>65.4730</td>
+</tr>
+<tr>
+<td>12</td>
+<td>51</td>
+<td>19</td>
+<td>0.5580</td>
+<td>61.6333</td>
+</tr>
+<tr>
+<td>13</td>
+<td>53</td>
+<td>20</td>
+<td>0.5555</td>
+<td>58.2193</td>
+</tr>
+<tr>
+<td>14</td>
+<td>54</td>
+<td>20</td>
+<td>0.5531</td>
+<td>55.1654</td>
+</tr>
+<tr>
+<td>15</td>
+<td>57</td>
+<td>21</td>
+<td>0.5507</td>
+<td>52.4156</td>
+</tr>
+</tbody>
+</table>
+<h2>直轨加速阻尼模型总结</h2>
+<p>计算最大滑行距离所应使用的模型就如下所示了</p>
+<table>
+<tbody><tr>
+<th>动力铁轨数\矿车类型</th>
+<th>非运矿车</th>
+<th>货运矿车</th>
+<th>客运矿车</th>
+<th>动力矿车</th>
+</tr>
+<tr>
+<td align="center">1</td>
+<td colspan="3" align="center">单格模型</td>
+<td align="center">多格模型</td>
+</tr>
+<tr>
+<td align="center">多格（未达到阈值）</td>
+<td colspan="4" align="center">多格模型</td>
+</tr>
+<tr>
+<td align="center">多格（达到阈值）</td>
+<td align="center">不存在</td>
+<td align="center" colspan="2">阈值模型</td>
+<td align="center">不存在</td>
+</tr>
+</tbody></table>
 
   </body>
 </html>
